@@ -16,6 +16,8 @@ let debounce=function(fn,delay){
 let th=function(fn,delay){
   let _this,args,timeout,start;
   return function(){
+    _this=this;
+    args=arguments;
     let now=Date.now();
     let leftTime=delay-(now-start);
     if(left<0){
