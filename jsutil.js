@@ -47,7 +47,7 @@ let shalowCopy=function(obj){
   return res;
 }
 
-// 深拷贝,或者直接使用JSON.parse(),JSON.stringtify()
+// 深拷贝,或者直接使用JSON.parse(),JSON.stringtify();
 let deepCopy=function(obj){
   if(typeof obj !=='object' || !obj) return obj;
   let res=Array.isArray(obj)?[]:{};
