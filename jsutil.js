@@ -41,7 +41,7 @@ let shalowCopy=function(obj){
   let res=Array.isArray(obj)?[]:{};
   for(key in obj){
     if(obj.hasOwbProperty(key)){
-      res[key]=obj[key]
+      res[key]=obj[key]；
     }
   }
   return res;
