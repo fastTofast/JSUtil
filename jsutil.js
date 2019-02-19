@@ -87,3 +87,18 @@ let flatAnyDepth = function (arr, depth) {
   return depth != 1 ? arr.reduce((a, b) => a.concat(Array.isArray(b) ? flatAnyDepth(b) : b), [])
     : arr.reduce((a, b) => { a.concat(b) }, [])
 }
+
+// 乱序(概率有问题，不够随机)
+let shuffle = function (arr) {
+  return arr.sort((a, b) => {
+    return Math.random() - 0.5
+  })
+}
+// 乱序(彻底乱序)
+let shuffle = function (arr) {
+  for (let i = arr.length; i; i--) {
+    let x = Math.floor(Math.random() * i);
+    [arr[i - 1], arr[x]] = [arr[x], arr[i - 1]];// 当前元素和前面的随机一个元素互换
+  }
+  return arr;
+}
